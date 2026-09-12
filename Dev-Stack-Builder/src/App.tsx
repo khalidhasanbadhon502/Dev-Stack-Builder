@@ -1,20 +1,17 @@
-import { Toaster } from 'react-hot-toast';
-import { Nav } from './components/Nav'; 
+import { Nav } from './components/Nav';
+import Banner from './components/Banner';
 import { TechExplorer } from './components/TechExplorer';
-import { Footer } from './components/Footer'; 
+import { Footer } from './components/Footer';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-    
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       <Nav />
-      
- 
-      <TechExplorer />
-
+      <main className="flex-grow">
+        <Banner />
+        <TechExplorer />
+      </main>
       <Footer />
-
-      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 }
