@@ -1,58 +1,73 @@
-import logo from '../assets/logo-text.png'
+import { useState } from 'react';
+import hamburgerIcon from '../assets/hamburger.png';
 
-const Nav = () => {
+export const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="border-b border-gray-100 bg-white py-5 shadow-sm">
-      <div className="container mx-auto flex items-center justify-between px-6">
-      
-        <div className="flex items-center">
-          <img src={logo} className="h-10 w-auto" alt="DevStack logo" />
-        </div>
+    <nav className="bg-white border-b border-slate-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          
+          {/* Hamburger Icon (Mobile Only) */}
+          <div className="flex items-center md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1 rounded-md focus:outline-none hover:bg-slate-100 transition"
+            >
+              <img 
+                src={hamburgerIcon} 
+                alt="Menu" 
+                className="w-6 h-6 object-contain" 
+              />
+            </button>
+          </div>
 
-       
-        <ul className="flex items-center space-x-8 text-base font-semibold">
-          <li>
-            <a href="/" className="text-pink-600">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/technologies" className="text-gray-600 transition-colors hover:text-pink-600">
-              Technologies
-            </a>
-          </li>
-          <li>
-            <a href="/projects" className="text-gray-600 transition-colors hover:text-pink-600">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="/about" className="text-gray-600 transition-colors hover:text-pink-600">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="text-gray-600 transition-colors hover:text-pink-600">
-              Contact
-            </a>
-          </li>
-        </ul>
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-[#d946ef] to-[#ec4899] rounded-lg flex items-center justify-center text-white font-bold text-xs">
+              DS
+            </div>
+            <span className="text-xl font-bold text-slate-900 tracking-tight">
+              Dev<span className="text-[#ec4899]">Stack</span>
+            </span>
+          </div>
 
-       
-        <div className="flex items-center space-x-5 text-base font-semibold">
-          <a href="/signin" className="text-gray-700 transition-colors hover:text-pink-600">
-            Sign In
-          </a>
-          <a
-            href="/signup"
-            className="rounded-full bg-pink-600 px-7 py-2.5 text-white shadow-md transition-all hover:bg-pink-700"
-          >
-            Sign Up
-          </a>
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+            <a href="#home" className="hover:text-slate-900">Home</a>
+            <a href="#technologies" className="hover:text-slate-900">Technologies</a>
+            <a href="#projects" className="hover:text-slate-900">Projects</a>
+            <a href="#about" className="hover:text-slate-900">About</a>
+            <a href="#contact" className="hover:text-slate-900">Contact</a>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3">
+            <a href="#signin" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+              Sign In
+            </a>
+            <a 
+              href="#signup" 
+              className="bg-gradient-to-r from-[#ec4899] to-[#d946ef] text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-full shadow-sm hover:opacity-90 transition"
+            >
+              Sign Up
+            </a>
+          </div>
+
         </div>
       </div>
-    </nav>
-  )
-}
 
-export default Nav
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-lg">
+          <a href="#home" className="block py-2 text-slate-700 font-medium hover:text-pink-500">Home</a>
+          <a href="#technologies" className="block py-2 text-slate-700 font-medium hover:text-pink-500">Technologies</a>
+          <a href="#projects" className="block py-2 text-slate-700 font-medium hover:text-pink-500">Projects</a>
+          <a href="#about" className="block py-2 text-slate-700 font-medium hover:text-pink-500">About</a>
+          <a href="#contact" className="block py-2 text-slate-700 font-medium hover:text-pink-500">Contact</a>
+        </div>
+      )}
+    </nav>
+  );
+};
