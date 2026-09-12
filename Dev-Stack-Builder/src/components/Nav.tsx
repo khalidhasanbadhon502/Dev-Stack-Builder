@@ -9,7 +9,7 @@ export const Nav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Hamburger Icon (Mobile Only) */}
+          
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -23,7 +23,7 @@ export const Nav = () => {
             </button>
           </div>
 
-          {/* Logo */}
+          
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-br from-[#d946ef] to-[#ec4899] rounded-lg flex items-center justify-center text-white font-bold text-xs">
               DS
@@ -33,7 +33,7 @@ export const Nav = () => {
             </span>
           </div>
 
-          {/* Desktop Links */}
+    
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
             <a href="#home" className="hover:text-slate-900">Home</a>
             <a href="#technologies" className="hover:text-slate-900">Technologies</a>
@@ -42,7 +42,7 @@ export const Nav = () => {
             <a href="#contact" className="hover:text-slate-900">Contact</a>
           </div>
 
-          {/* Action Buttons */}
+          
           <div className="flex items-center gap-3">
             <a href="#signin" className="text-sm font-medium text-slate-600 hover:text-slate-900">
               Sign In
@@ -58,7 +58,7 @@ export const Nav = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      
       {isOpen && (
         <div className="md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-2 shadow-lg">
           <a href="#home" className="block py-2 text-slate-700 font-medium hover:text-pink-500">Home</a>
