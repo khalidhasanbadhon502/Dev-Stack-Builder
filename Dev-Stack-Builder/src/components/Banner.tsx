@@ -7,7 +7,7 @@ const Banner = () => {
         
         
         <div className="max-w-xl text-left">
-          {/* Main Title */}
+    
           <h1 className="text-4xl font-extrabold tracking-tight text-[#0F172A] md:text-6xl leading-[1.15]">
             Build Your Ideal <br />
             <span className="bg-gradient-to-r from-[#FF5E36] via-[#E11D48] to-[#9333EA] bg-clip-text text-transparent">
@@ -22,7 +22,7 @@ const Banner = () => {
 
          
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            {/* Primary Button with Gradient */}
+            
             <button className="rounded-xl bg-gradient-to-r from-[#FF5E36] to-[#E11D48] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-95">
               Explore Technologies
             </button>
