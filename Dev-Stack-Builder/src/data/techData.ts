@@ -108,7 +108,17 @@ export const techList: TechItem[] = [
     badgeColor: 'bg-sky-100 text-sky-600',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
   },
-  
+  {
+  id: 'java',
+  name: 'Java',
+  description: 'A high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.',
+  category: 'Backend',
+  level: 'Intermediate',
+  rating: 4.8,
+  badge: 'Language',
+  badgeColor: 'bg-red-100 text-red-600',
+  icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+},
   {
     id: 'tailwind',
     name: 'Tailwind CSS',
